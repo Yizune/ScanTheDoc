@@ -1,0 +1,8 @@
+.env
+.neon
+.venv/
+node_modules/
+.data/
+frontend/.next/
+__pycache__/
+*.pyc

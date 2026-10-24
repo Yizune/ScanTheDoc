@@ -1,0 +1,14 @@
+.env
+.env.local
+.neon
+node_modules/
+.git/
+.venv/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+.data/
+frontend/node_modules/
+frontend/.next/
+*.tsbuildinfo
+
