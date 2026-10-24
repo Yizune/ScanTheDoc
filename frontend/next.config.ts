@@ -9,8 +9,6 @@ if (existsSync(rootEnvFile)) {
   loadEnvFile(rootEnvFile);
 }
 
-const apiTarget = process.env.API_INTERNAL_URL ?? "http://localhost:8000";
-
 const nextConfig: NextConfig = {
   agentRules: false,
   reactStrictMode: true,
@@ -20,8 +18,8 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: "/backend/:path*",
-        destination: `${apiTarget}/:path*`,
+        source: "/api/:path*",
+        destination: "http://localhost:8000/api/:path*",
       },
     ];
   },

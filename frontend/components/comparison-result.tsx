@@ -8,8 +8,6 @@ import type {
   PdfPageInfo,
 } from "@/lib/types";
 
-const API_URL = "/backend";
-
 type ComparedDocument = {
   id: string;
   name: string;
@@ -376,7 +374,7 @@ function usePagePreviews(document: ComparedDocument) {
       for (let attempt = 1; attempt <= 4 && active; attempt += 1) {
         try {
           const response = await fetch(
-            `${API_URL}/api/v1/documents/${document.id}/pages/${page.page}/preview`,
+            `/api/v1/documents/${document.id}/pages/${page.page}/preview`,
             {
               headers: token
                 ? { Authorization: `Bearer ${token}` }

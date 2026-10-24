@@ -20,8 +20,6 @@ import {
 import { errorMessage, useApi } from "@/lib/api";
 import type { DocumentItem, ProcessingJob } from "@/lib/types";
 
-const API_URL = "/backend";
-
 export default function Home() {
   const api = useApi();
   const { getToken, isLoaded, isSignedIn } = useAuth();
@@ -209,8 +207,8 @@ export default function Home() {
         selectedDocuments.length === 1 ? selectedDocuments[0] : null;
       const response = await fetch(
         singleDocument
-          ? `${API_URL}/api/v1/documents/${singleDocument.id}/download`
-          : `${API_URL}/api/v1/documents/download`,
+          ? `/api/v1/documents/${singleDocument.id}/download`
+          : "/api/v1/documents/download",
         {
           method: singleDocument ? "GET" : "POST",
           headers: {

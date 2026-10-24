@@ -3,8 +3,6 @@
 import { useAuth } from "@clerk/nextjs";
 import { useCallback } from "react";
 
-const API_URL = "/backend";
-
 export class ApiError extends Error {
   constructor(
     message: string,
@@ -30,7 +28,7 @@ export function useApi() {
         headers.set("Content-Type", "application/json");
       }
 
-      const response = await fetch(`${API_URL}${path}`, {
+      const response = await fetch(path, {
         ...init,
         headers,
         cache: "no-store",
